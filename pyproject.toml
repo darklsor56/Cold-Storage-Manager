@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cold_storage_manager"
+version = "0.1.0"
+description = "A Python tool to move unused files to cold storage based on access and time"
+authors = [{ name = "Daniel Remedios"}]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pyyaml",
+]
+
+[tool.setuptools.packages.find]
+where = ["cold_storage_manager"]
