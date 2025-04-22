@@ -28,7 +28,7 @@ classifiers = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["cold_storage_manager"]
+where = ["."]
 
 [project.scripts]
 coldstore = "cold_storage_manager.cli:main"
