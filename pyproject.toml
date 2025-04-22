@@ -8,10 +8,26 @@ version = "0.1.0"
 description = "A Python tool to move unused files to cold storage based on access and time"
 authors = [{ name = "Daniel Remedios"}]
 readme = "README.md"
+license = {text = "GPL v3"}
 requires-python = ">=3.8"
 dependencies = [
     "pyyaml",
 ]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: System :: Archiving",
+    "Topic :: System :: Filesystems",
+    "Topic :: Utilities"
+]
 
 [tool.setuptools.packages.find]
 where = ["cold_storage_manager"]
+
+[project.scripts]
