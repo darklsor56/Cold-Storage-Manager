@@ -31,3 +31,4 @@ classifiers = [
 where = ["cold_storage_manager"]
 
 [project.scripts]
+coldstore = "cold_storage_manager.cli:main"
