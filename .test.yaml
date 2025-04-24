@@ -1,9 +1,16 @@
 tests:
-  - name: Check Python version
-    command: python3 --version
+  - name: "Check Python version"
+    command: "python3 --version"
 
-  - name: Run unit tests
-    command: python3 -m unittest discover
+  - name: "Run unit tests"
+    command: "python3 -m unittest discover -s cold_storage_manager/tests -p 'test_*.py'"
 
-  - name: Lint code
-    command: pylint my_project/
+  - name: "Run linter"
+    command: "pylint cold_storage_manager"
+
+  - name: "Check for test script errors"
+    command: "python3 -m py_compile cold_storage_manager/tests/run_tests.py"
+
+  - name: "Run unit tests"
+    command: "python3 -m unittest discover"
+    tags: ["unit", "core"]
