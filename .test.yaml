@@ -1,0 +1,9 @@
+tests:
+  - name: Check Python version
+    command: python3 --version
+
+  - name: Run unit tests
+    command: python3 -m unittest discover
+
+  - name: Lint code
+    command: pylint my_project/
