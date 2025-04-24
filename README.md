@@ -30,6 +30,7 @@ pip install -e .
 
 # Optionally install dev tools (like pylint)
 pip install pylint
+```
 
 ## License
 
