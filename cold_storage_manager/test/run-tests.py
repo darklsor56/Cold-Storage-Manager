@@ -1,7 +1,7 @@
 import subprocess
 import yaml
 
-with open(".test.yaml") as f:
+with open("../../.test.yaml") as f:
     config = yaml.safe_load(f)
 
 print("🚀 Starting tests...\n")
