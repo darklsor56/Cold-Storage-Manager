@@ -10,7 +10,7 @@ def main():
         print("Usage: coldstore scan <directory> <days>")
         sys.exit(1)
     command = sys.argv[1]
-    if comand == "scan":
+    if command == "scan":
         #Ensure the command is ran as coldstore scan <directory> <days>.
         if len(sys.argv) != 4:
             print("Usage: coldstore scan <directory> <days>")
@@ -18,8 +18,8 @@ def main():
         path = sys.argv[2]
         #Make sure days is an integer
         try:
-            days = init(sys.argv[3])
-        except:
+            days = int(sys.argv[3])
+        except TypeError:
             print("Error: <days> must be an integer.")
             sys.exit(1)
         # Call the scanner function and print results
