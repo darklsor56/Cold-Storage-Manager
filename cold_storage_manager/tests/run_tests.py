@@ -34,10 +34,14 @@ for test in config.get("tests", []):
         print("🔍 (Dry run — command not executed)\n")
         continue
 
-    result = subprocess.run(cmd, shell=True, check=False)
+    result = subprocess.run(cmd, shell=True, check=False, capture_output=True, text=True)
 
     if result.returncode == 0:
         print("✅ Passed\n")
     else:
         print("❌ Failed\n")
+        if result.stdout:
+            print("STDOUT:\n", result.stdout)
+        if result.stderr:
+            print("STDERR:\n", result.stderr)
         sys.exit(1)
