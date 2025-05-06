@@ -12,22 +12,22 @@ class FileMinHeap:
     def insert(self, node: FileNode):
         """Insert a FileNode into the heap"""
         entry = (node.last_accessed, node.file_path, node)
-        heapq.heappush(self._heap, entry)
+        heapq.heappush(self.heap, entry)
         self._entry_finder[node.file_path] = entry
         
     def peek_coldest(self) -> FileNode | None:
         """Return the coldest file (oldest last_accessed), or None if empty"""
-        while self._heap:
-            _, file_path, node = self._heap[0]
+        while self.heap:
+            _, file_path, node = self.heap[0]
             if file_path in self._entry_finder:
                 return node
-            heapq.heappop(self._heap) # Remove stale reference
+            heapq.heappop(self.heap) # Remove stale reference
         return None
     
     def pop_coldest(self) -> FileNode | None:
         """Remove and return the coldest file."""
-        while self._heap:
-            _, file_path, node = heapq.heappop(self.heap_heap)
+        while self.heap:
+            _, file_path, node = heapq.heappop(self.heap)
             if file_path in self._entry_finder:
                 del self._entry_finder[file_path]
                 return node
