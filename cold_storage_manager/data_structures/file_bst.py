@@ -1,5 +1,4 @@
 """Primarily stores the files locations and NOT there acessed/download times"""
-import os
 from cold_storage_manager.data_structures.file_node import FileNode
     
 class FileBST:
